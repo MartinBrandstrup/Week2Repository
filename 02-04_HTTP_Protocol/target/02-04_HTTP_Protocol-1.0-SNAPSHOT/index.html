@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="myStyle.css">
+
+    </head>
+
+    <body>
+        <h1 style="font-size:130%;">Beklager den virkelig grimme HTML. Det blev strikkte sammen på 10 minutter efter at være blevet kopieret fra et tekstdokument</h1>
+        <h1 style="font-size:160%;">02-04 Excersises</h1>
+<h1 style="font-size:120%;">Understanding Basic Network Terms like IP, TCP/IP, DNS, DHCP and more.</h1>
+<p>Most of these exercises are meant to be answered with text, so write down your reply so you will remember.</p>
+
+<h1 style="font-size:120%;">What is your public IP address right now, and how did you find it?</h1>
+    
+<p>5.179.80.205 = router’s IP @school: http://whatsmyrouterip.com/</p>
+<p>2.104.69.19 = router’s IP @home: http://whatsmyrouterip.com/</p>
+
+<h1 style="font-size:120%;">What is your private IP address right now (do this both at home and in school), and who/what gave you that address?</h1>
+<p>10.50.131.147 (@school)</p>
+<p>194.168.0.3 (@home)</p>
+
+<h1 style="font-size:120%;">What’s special about these address ranges?</h1>
+<p>10.0.0.0 – 10.255.255.255</p>
+<p>172.16.0.0 – 172.31.255.255 </p>
+<p>192.168.0.0 – 192.168.255.255</p>
+<p>Private IP intervaller, kan ikke blive routes. Ie. kan ikke blive transporteres gennem netværket.</p>
+
+<h1 style="font-size:120%;">What’s special about this ip-address: 127.0.0.1?</h1>
+Er en lokal ip adresse så man kan teste localhost netværk. (actually 127.0.x.x) = loopback ip
+
+<h1 style="font-size:120%;">What kind of service would you expect to find on a server using these ports: 22, 23, 25, 53, 80, 443?</h1>
+A mail/communications server
+
+<h1 style="font-size:120%;">What is the IP address of studypoints.dk and how did you find it?</h1>
+165.227.137.75
+
+<h1 style="font-size:120%;">If you write https://studypoints.dk in your browser, how did “it” figure out that it should go to the IP address you discovered above</h1>
+En DNS server har oversat domænenavnet til en IP-adresse
+
+<h1 style="font-size:120%;">Explain shortly the purpose of an ip-address and a port-number and why we need both</h1>
+IP adressen: skal bruges for at kunne forbinde til internettet med en identifikation, som andre “brugere” kan finde.
+Port: en “åbning” til et netværk, som bliver tildelt lokale applikationer, så der ikke opstår konflikt når der oprettes adgang til et netværk
+
+<h1 style="font-size:120%;">What is your (nearest) DNS server,?</h1>
+10.50.128.1
+
+<h1 style="font-size:120%;">What is (conceptually) the DNS system and the purpose with a DNS Server?</h1>
+Domain-Name-Server skal oversætte domæne navn til IP-adresser.
+
+<h1 style="font-size:120%;">What is your current Gateway, and how did you find it?</h1>
+Konsol: ipconfig = 10.50.128.1
+
+<h1 style="font-size:120%;">What is the address of your current DHCP-Server, and how did you find it?</h1>
+
+
+<h1 style="font-size:120%;">Explain (conceptually) about the TCP/IP-protocol stack</h1>
+<p>Er brugt til at dirigere data der er modtaget fra et netværk rundt i systemet til der hvor det hører til. Beskrevet gennem headers, der bliver tilføjet af hvert lag i stacken.</p>
+<p>App → Transport → Network → Data Link → Physical</p>
+
+<h1 style="font-size:120%;">Explain about the HTTP Protocol (the following exercises will go much deeper into this protocol)</h1>
+HTTP bruges til at kommunikere over nettet. De benytter sig af HTTP Requests og Responses
+
+<h1 style="font-size:120%;">Explain (conceptually) how HTTP and TCP/IP are connected (what can HTTP do, and where does it fit into TCP/IP)</h1>
+
+
+<h1 style="font-size:160%;">02-05 Excersises</h1>
+
+<h1 style="font-size:120%;">Ex 1:</h1>
+Får en kode 200 (OK) fra min localhost adresse med typen Document. Source er den index.html fil der bliver autogeneret i netbeans (hello world)
+
+<h1 style="font-size:120%;">Ex 2:</h1>
+<p>Kode 304 på image og kode 200 på css stylesheet</p>
+<p>Jeg antager at det er den her connection header:</p>
+<p>Accept-Language: da-DK,da;q=0.9,en-US;q=0.8,en;q=0.7</p>
+<p>Connection: keep-alive</p>
+<p>Host: localhost:8080</p>
+<p>Den bestemmer hvilken type connection der er tale om, og hvor længe den skal vare. Keep-alive betyde den er persistent og kan modtage flere requests.</p>
+
+<h1 style="font-size:120%;">Ex 3:</h1>
+<p>Et “redirect” kode 302 request</p>
+<p>302 Found er tilsyneladende koden for redirects</p>
+<p>Og et “r.html” kode 304 request med “redirect” som initatior</p>
+
+Jeg antager at det blot betyder at der er redirected til den resource som servletten angiver. I dette tilfælde et html dokument ved navn r.html
+
+<h1 style="font-size:120%;">Ex 3a:</h1>
+<p>http://studypoints.info</p>
+<p>giver:</p>
+<p>Request URL: http://studypoints.info/</p>
+<p>Request Method: GET</p>
+<p>Status Code: 301 Moved Permanently</p>
+<p>Remote Address: 157.230.21.145:80</p>
+<p>Location: https://studypoints.info/</p>
+
+<p>Som giver:</p>
+<p>Request URL: https://studypoints.info/</p>
+<p>Request Method: GET</p>
+<p>Status Code: 200  (from disk cache)</p>
+<p>Remote Address: 157.230.21.145:443</p>
+<h1 style="font-size:120%;">Ex 4a:</h1>
+<p>Får kode 404 not found, da der ikke henvises til en resource der findes.</p>
+<p>Jeg kan forestille mig at linjen</p>
+<p> int result = 100/0;</p>
+<p>Burde have givet en status kode 100? Ellers har jeg misforstået noget, men variablen “result” bliver ikke brugt i den metode.</p>
+<p>Kan ikke finde andre steder i headeren hvor koden kommer til udtryk</p>
+
+<h1 style="font-size:120%;">Ex 4b:</h1>
+Giver præcis samme response… jeg må have gjort noget forkert, men kan ikke lige gennemskue hvilket.
+
+<h1 style="font-size:120%;">Ex 4c:</h1>
+<p>2xx er når noget går godt</p>
+<p>3xx er tilsyneladende redirects af forskellige former</p>
+<p>4xx er indtil videre file not found. Antager at der gemmer sig andre fejlbeskeder der</p>
+<p>5xx fik jeg aldrig… men man kan vel altid google søge: Internal Server Error. Giver mening at det var der jeg lavede om i servlet koden. Men tilsyneladende er jeg ikke god nok til at lave fejl. Task failed unsuccessfully.</p>
+
+<h1 style="font-size:120%;">Ex 5:</h1>
+N/A
+
+<h1 style="font-size:120%;">Ex 6:</h1>
+En Post metode er mere sikker: den indeholder ikke al informationen i URL body’en som GET gør.
+
+
+        
+        <img src="images/ko.jpg" alt="En ko">
+        <!--<h1>Hello World!</h1>-->
+    </body>
+</html>
